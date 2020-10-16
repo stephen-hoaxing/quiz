@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quiz-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10rem 2fr 1fr;
+  background-color: #eee;
+}
+
+.question {
+  text-align: center;
+  font-size: 2rem;
+  align-self: center;
+  color: rgb(34, 34, 34);
+  border-bottom: 10px solid rgb(163, 139, 2);
+  padding-bottom: 40px;
+}
+
+.modal {
+  width: 80%;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(34, 34, 34);
+  border-radius: 20px;
+  opacity: 0.7;
+}
+
+.congrats {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #eee;
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+
+.answer-container {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.answer {
+  background-color: rgb(34, 34, 34);
+  color: #eee;
+  font-size: 2rem;
+  text-align: center;
+  height: 120px;
+  width: 100%;
+  transform: scale(0.8);
+  transform-origin: center;
+  cursor: pointer;
+  border-radius: 100px;
+  border: 10px solid rgb(163, 139, 2);
+  outline-style: none;
+}
+
+.controls {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.btn {
+  border: none;
+  width: 200px;
+  font-size: 3rem;
+  padding: 20px;
+  color: #eee;
+  background-color: rgb(34, 34, 34);
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.selected {
+  background-color: orange;
+  pointer-events: none;
+}
+
+.blink {
+  animation: animate 1s;
+}
+
+@keyframes animate {
+  0% {
+    background-color: orange;
+    opacity: 1;
+  }
+  20% {
+    background-color: green;
+    opacity: 1;
+  }
+  40% {
+    background-color: orange;
+    opacity: 1;
+  }
+  60% {
+    background-color: green;
+    opacity: 1;
+  }
+  80% {
+    background-color: orange;
+    opacity: 1;
+  }
+  100% {
+    background-color: green;
+    opacity: 1;
+  }
+}
